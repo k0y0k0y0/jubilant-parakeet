@@ -1,9 +1,23 @@
 {
   "compilerOptions": {
-      "target": "es5",
-      "module": "commonjs",
-      "jsx": "react",
+      "outDir": "./built/",
+      "sourceMap": true,
       "strict": true,
-      "esModuleInterop": true
-  }
+      "noImplicitReturns": true,
+      "noImplicitAny": true,
+      "module": "es2015", //フロント使用予定なのでcommonjsは使用しません
+      "jsx": "react", // tsxファイルをjsxやjsにコンパイルする際の出力の形式を指定する
+      "experimentalDecorators": true,
+      "emitDecoratorMetadata": true,
+      "moduleResolution": "node",
+      "target": "es6",
+      "lib": [
+          "es2016",
+          "dom"
+      ],
+      "allowSyntheticDefaultImports": true // エクスポートしないモジュールからのインポートを許可する。これでtypescriptでreactをインポートするときにimport React from 'react';を使えるようになる
+  },
+  "include": [
+      "resources/ts/**/*" // TypeScriptのソース配置場所
+  ]
 }
